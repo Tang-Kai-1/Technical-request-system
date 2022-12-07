@@ -5,10 +5,11 @@ import jakarta.persistence.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 public class Request {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(columnDefinition = "serial")
@@ -28,7 +29,7 @@ public class Request {
         this.device = createRequest.getDevice();
         this.parameters = createRequest.getParameters();
         this.reason = createRequest.getReason();
-        this.creationDate = createRequest.getCreationDate();
+        this.creationDate = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss").format(LocalDateTime.now(ZoneId.of("UTC+2")));
         this.status = createRequest.getStatus();
     }
 
