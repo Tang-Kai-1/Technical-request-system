@@ -4,6 +4,8 @@ Izveidota ar java spring boot framework un angular ar Postgresql datubāzi.
 Sistēmā ir iespējams pievienot jaunus pieprasījumus, dzēst vai apstiprināt/noraidīt esošos.
 
 ### Kā palaist
+Nepieciešams noklonēt repozitoriju un izpildīt 'git submodule init' un 'git submodule update' komandas.
+
 Jāpieslēdz Postgresql datubāze ar 5432 portu un applicaiton properties failā jāievada datubāzes lietotājvārds un parole.
 
             ./mvnw spring-boot:run
